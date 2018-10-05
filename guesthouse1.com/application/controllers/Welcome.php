@@ -251,18 +251,18 @@ class Welcome extends CI_Controller {
 	  				'protocol' => 'smtp',
 	  				'mailtype' => 'html',
 	  				'smtp_host' => 'smtp.sendgrid.net',
-	  				'smtp_user' => 'ravijohn',
-	  				'smtp_pass' => 'lumiablack@5',
+	  				'smtp_user' => '',
+	  				'smtp_pass' => '',
 	  				'smtp_port' => 587,
 	  				'crlf' => "\r\n",
 	  				'newline' => "\r\n"
 				));
-				$this->email->from('ravijohnhoro5@gmail.com', 'Employee');
+				$this->email->from('', 'Employee');
 				if($this->input->post('approve')){
 					$app_num = $this->input->post('approve');
 					$info = $this->public_model->info($app_num);
 					$this->public_model->status('approve','hod',$app_num);
-					$this->email->to('ravijohnhoro5@gmail.com');
+					$this->email->to('');
 					$this->email->subject('Regarding status of application form for room at NITK Guesthouse '.date('Y-m-d H:i:s'));
 					$this->email->message("Dear ".$info['first_name']." ".$info['last_name']." , your application form has been approved by the HOD. It has been sent to the Faculty Advisor for confirmation. After confirmation you'll be allocated rooms. Please wait for an confirmation email. Thanking you.");
 					$this->email->send();
@@ -274,7 +274,7 @@ class Welcome extends CI_Controller {
 					$info = $this->public_model->info($app_num);
 					$this->public_model->status('disapprove','hod',$app_num);
 
-					$this->email->to('ravijohnhoro5@gmail.com');
+					$this->email->to('');
 					$this->email->subject('Regarding status of application form for room at NITK Guesthouse '.date('Y-m-d H:i:s'));
 					$this->email->message("Dear ".$info['first_name']." ".$info['last_name']." , your application form has been disapproved by the HOD. It has been sent to the Dean for confirmation. After confirmation you'll be allocated rooms. Please wait for an confirmation email. Thanking you.");
 					$this->email->send();
@@ -365,14 +365,14 @@ class Welcome extends CI_Controller {
 					'protocol' => 'smtp',
 					'mailtype' => 'html',
 					'smtp_host' => 'smtp.sendgrid.net',
-					'smtp_user' => 'ravijohn',
-					'smtp_pass' => 'lumiablack@5',
+					'smtp_user' => '',
+					'smtp_pass' => '',
 					'smtp_port' => 587,
 					'crlf' => "\r\n",
 					'newline' => "\r\n"
 				));
-			$this->email->from('ravijohnhoro5@gmail.com', 'Employee');
-			$this->email->to('ravijohnhoro5@gmail.com');
+			$this->email->from('', 'Employee');
+			$this->email->to('');
 
 			if($this->input->post('approve'))
 			{
@@ -381,7 +381,7 @@ class Welcome extends CI_Controller {
 				$booking_id = str_pad($application_number, 4, "0", STR_PAD_LEFT );
 				$this->public_model->booking($booking_id,$application_number);
 
-				$this->email->to('ravijohnhoro5@gmail.com');
+				$this->email->to('');
 				$this->email->subject('Regarding status of application form for room at NITK Guesthouse '.date('Y-m-d H:i:s'));
 				$this->email->message("Dear ".$info['first_name']." ".$info['last_name']." , your application form has been approved by the Faculty Advisor. You will get a confirmation email after the rooms have been allocated to you. Thanking you.");
 				$this->email->send();
@@ -394,7 +394,7 @@ class Welcome extends CI_Controller {
 			{
 				$this->public_model->status('disapprove','faculty',$application_number);
 
-				$this->email->to('ravijohnhoro5@gmail.com');
+				$this->email->to('');
 				$this->email->subject('Regarding status of application form for room at NITK Guesthouse '.date('Y-m-d H:i:s'));
 				$this->email->message("Dear ".$info['first_name']." ".$info['last_name']." , your application form has been disapproved by the Faculty Advisor as the rooms are not available for the selected date. Please find some other options for your stay.");
 				$this->email->send();
@@ -561,15 +561,14 @@ class Welcome extends CI_Controller {
 								'protocol' => 'smtp',
 								'mailtype' => 'html',
 								'smtp_host' => 'smtp.sendgrid.net',
-								'smtp_user' => 'ravijohn',
-								'smtp_pass' => 'lumiablack@5',
+								'smtp_user' => '',
+								'smtp_pass' => '',
 								'smtp_port' => 587,
 								'crlf' => "\r\n",
 								'newline' => "\r\n"
 							));
-							$this->email->from('ravijohnhoro5@gmail.com', 'Employee');
-							$this->email->to('ravijohnhoro5@gmail.com');
-							$this->email->to('ravijohnhoro5@gmail.com');
+							$this->email->from('', 'Employee');
+							$this->email->to('');
 							$this->email->subject('Regarding status of application form for room at NITK Guesthouse '.date('Y-m-d H:i:s'));
 							$this->email->message("Dear ".$info['first_name']." ".$info['last_name']." , rooms have been alloted to you.");
 							$this->email->send();
@@ -586,7 +585,7 @@ class Welcome extends CI_Controller {
 				}
 				else if($action == 'Check In'){
 
-					if(!empty($_FILES['document']['name'])){
+				if(!empty($_FILES['document']['name'])){
 		                $config['upload_path'] = 'uploads/documents/';
 		                $config['allowed_types'] = 'jpg|jpeg|png|gif|pdf';
 		                $config['file_name'] = $_FILES['document']['name'];
@@ -625,15 +624,15 @@ class Welcome extends CI_Controller {
 						'protocol' => 'smtp',
 						'mailtype' => 'html',
 						'smtp_host' => 'smtp.sendgrid.net',
-						'smtp_user' => 'ravijohn',
-						'smtp_pass' => 'lumiablack@5',
+						'smtp_user' => '',
+						'smtp_pass' => '',
 						'smtp_port' => 587,
 						'crlf' => "\r\n",
 						'newline' => "\r\n"
 					));
-					$this->email->from('ravijohnhoro5@gmail.com', 'Employee');
-					$this->email->to('ravijohnhoro5@gmail.com');
-					$this->email->to('ravijohnhoro5@gmail.com');
+					$this->email->from('', 'Employee');
+					
+					$this->email->to('');
 					$this->email->subject('Regarding status of application form for room at NITK Guesthouse '.date('Y-m-d H:i:s'));
 					$this->email->message("Dear ".$info['first_name']." ".$info['last_name']." , your booking has been cancelled.");
 					$this->email->send();
@@ -757,15 +756,15 @@ class Welcome extends CI_Controller {
 					'protocol' => 'smtp',
 					'mailtype' => 'html',
 					'smtp_host' => 'smtp.sendgrid.net',
-					'smtp_user' => 'ravijohn',
-					'smtp_pass' => 'lumiablack@5',
+					'smtp_user' => '',
+					'smtp_pass' => '',
 					'smtp_port' => 587,
 					'crlf' => "\r\n",
 					'newline' => "\r\n"
 				));
-				$this->email->from('ravijohnhoro5@gmail.com', 'Employee');
-				$this->email->to('ravijohnhoro5@gmail.com');
-				$this->email->to('ravijohnhoro5@gmail.com');
+				$this->email->from('', 'Employee');
+				$this->email->to('');
+				$this->email->to('');
 				$this->email->subject('Regarding status of application form for room at NITK Guesthouse '.date('Y-m-d H:i:s'));
 				$this->email->message("Dear ".$info['first_name']." ".$info['last_name']." , we are sorry to inform you that due to some unavoidable circumstances , we have to cancel your booking at NITK Guest House. Please look for other options for your stay. We regret any inconvenience caused by us.");
 				$this->email->send();
@@ -821,14 +820,14 @@ class Welcome extends CI_Controller {
 						'protocol' => 'smtp',
 						'mailtype' => 'html',
 						'smtp_host' => 'smtp.sendgrid.net',
-						'smtp_user' => 'ravijohn',
-						'smtp_pass' => 'lumiablack@5',
+						'smtp_user' => '',
+						'smtp_pass' => '',
 						'smtp_port' => 587,
 						'crlf' => "\r\n",
 						'newline' => "\r\n"
 					));
-					$this->email->from('ravijohnhoro5@gmail.com', 'Employee');
-					$this->email->to('ravijohnhoro5@gmail.com');
+					$this->email->from('', 'Employee');
+					$this->email->to('');
 					$this->email->subject('Regarding status of application form for room at NITK Guesthouse '.date('Y-m-d H:i:s'));
 					$this->email->message("Dear ".$info['first_name']." ".$info['last_name']." , your application form has been approved by the Dean. You will get a confirmation email after the rooms have been allocated to you. Thanking you.");
 					$this->email->send();
@@ -900,15 +899,15 @@ class Welcome extends CI_Controller {
 	  				'protocol' => 'smtp',
 	  				'mailtype' => 'html',
 	  				'smtp_host' => 'smtp.sendgrid.net',
-	  				'smtp_user' => 'ravijohn',
-	  				'smtp_pass' => 'lumiablack@5',
+	  				'smtp_user' => '',
+	  				'smtp_pass' => '',
 	  				'smtp_port' => 587,
 	  				'crlf' => "\r\n",
 	  				'newline' => "\r\n"
 				));
 
-				$this->email->from('ravijohnhoro5@gmail.com', 'Employee');
-				$this->email->to('ravijohnhoro5@gmail.com');
+				$this->email->from('', 'Employee');
+				$this->email->to('');
 				$this->email->subject('Regarding status of application form for room at NITK Guesthouse '.date('Y-m-d H:i:s'));
 				$this->email->message("Dear ".$info['first_name']." ".$info['last_name']." , your application form has been approved by the HOD. It has been sent to the Dean for confirmation. After confirmation you'll be allocated rooms. Please wait for an confirmation email. Thanking you.");
 				$this->email->send();
@@ -923,15 +922,15 @@ class Welcome extends CI_Controller {
 	  				'protocol' => 'smtp',
 	  				'mailtype' => 'html',
 	  				'smtp_host' => 'smtp.sendgrid.net',
-	  				'smtp_user' => 'ravijohn',
-	  				'smtp_pass' => 'lumiablack@5',
+	  				'smtp_user' => '',
+	  				'smtp_pass' => '',
 	  				'smtp_port' => 587,
 	  				'crlf' => "\r\n",
 	  				'newline' => "\r\n"
 				));
 
-				$this->email->from('ravijohnhoro5@gmail.com', 'Employee');
-				$this->email->to('ravijohnhoro5@gmail.com');
+				$this->email->from('', 'Employee');
+				$this->email->to('');
 				$this->email->subject('Regarding status of application form for room at NITK Guesthouse '.date('Y-m-d H:i:s'));
 				$this->email->message("Dear ".$info['first_name']." ".$info['last_name']." your application form has been rejected by the HOD.");
 				$this->email->send();
@@ -1140,14 +1139,14 @@ class Welcome extends CI_Controller {
 							'protocol' => 'smtp',
 							'mailtype' => 'html',
 							'smtp_host' => 'smtp.sendgrid.net',
-							'smtp_user' => 'ravijohn',
-							'smtp_pass' => 'lumiablack@5',
+							'smtp_user' => '',
+							'smtp_pass' => '',
 							'smtp_port' => 587,
 							'crlf' => "\r\n",
 							'newline' => "\r\n"
 						));
-						$this->email->from('ravijohnhoro5@gmail.com', 'Employee');
-						$this->email->to('ravijohnhoro5@gmail.com');
+						$this->email->from('', 'Employee');
+						$this->email->to('');
 						$this->email->subject('Regarding status of application form for room at NITK Guesthouse '.date('Y-m-d H:i:s'));
 						$this->email->message("Dear ".$info['first_name']." ".$info['last_name']." , rooms have been alloted to you. Ask for your room numbers at the counter. Have a pleasant stay.");
 						$this->email->send();
@@ -1429,14 +1428,14 @@ class Welcome extends CI_Controller {
 						'protocol' => 'smtp',
 						'mailtype' => 'html',
 						'smtp_host' => 'smtp.sendgrid.net',
-						'smtp_user' => 'ravijohn',
-						'smtp_pass' => 'lumiablack@5',
+						'smtp_user' => '',
+						'smtp_pass' => '',
 						'smtp_port' => 587,
 						'crlf' => "\r\n",
 						'newline' => "\r\n"
 					));
-					$this->email->from('ravijohnhoro5@gmail.com', 'Employee');
-					$this->email->to('ravijohnhoro5@gmail.com');
+					$this->email->from('', 'Employee');
+					$this->email->to('');
 					$this->email->subject('Regarding status of application form for room at NITK Guesthouse '.date('Y-m-d H:i:s'));
 					$this->email->message("Dear ".$info['first_name']." ".$info['last_name']." , rooms have been alloted to you. Ask for your room numbers at the counter. Have a pleasant stay.");
 					$this->email->send();
